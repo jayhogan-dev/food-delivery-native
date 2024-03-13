@@ -15,6 +15,7 @@ const ProductListItem = ({ product }: ProductListItemProps) => {
       <Image
         style={styles.image}
         source={{ uri: product.image || defaultPizzaImage }}
+        resizeMode="contain"
       />
       <Text style={styles.title}>{product.name}</Text>
       <Text style={styles.price}>${product.price}</Text>
@@ -29,6 +30,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 10,
     borderRadius: 10,
+    flex: 1,
+    maxWidth: "50%", // add this if your flatlist has an odd number or else, it will take up 100%
   },
   image: {
     aspectRatio: 1,
